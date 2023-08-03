@@ -227,7 +227,7 @@ class CodeInterpreterSession:
 
         # When using codebox api key, here it is always saying session not started, so starting one here
         # just in case.
-        self.astart()
+        await self.astart()
         user_request = UserRequest(content=user_msg, files=files)
         try:
             await self._input_handler(user_request)
