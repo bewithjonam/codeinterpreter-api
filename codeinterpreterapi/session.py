@@ -52,6 +52,7 @@ class CodeInterpreterSession:
                 exit(1)
         print("Starting code box session async next...")
         await self.codebox.astart()
+        print("completed starting, status is ", self.codebox.status())
 
     def _tools(
         self, 
