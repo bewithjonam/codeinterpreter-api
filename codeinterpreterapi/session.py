@@ -224,6 +224,10 @@ class CodeInterpreterSession:
         detailed_error: bool = False,
     ) -> CodeInterpreterResponse:
         """Generate a Code Interpreter response based on the user's input."""
+
+        # When using codebox api key, here it is always saying session not started, so starting one here
+        # just in case.
+        self.astart()
         user_request = UserRequest(content=user_msg, files=files)
         try:
             await self._input_handler(user_request)
