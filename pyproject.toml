@@ -13,6 +13,7 @@ openai = "^0.27.8"
 langchain = "^0.0.242"
 codeboxapi = "^0.0.14"
 streamlit = "^1.25.0"
+jupyter-kernel-gateway = "^2.5.2"
 
 [tool.poetry.extras]
 all = ["jupyter-kernel-gateway", "streamlit", "Pillow"]
