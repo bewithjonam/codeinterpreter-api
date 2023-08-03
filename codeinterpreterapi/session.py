@@ -50,6 +50,7 @@ class CodeInterpreterSession:
                     "You can install it with 'pip install jupyter-kernel-gateway'."
                 )
                 exit(1)
+        print("Starting code box session async next...")
         await self.codebox.astart()
 
     def _tools(
