@@ -3,7 +3,7 @@ import streamlit as st
 from codeinterpreterapi.config import settings
 from codeinterpreterapi import CodeInterpreterSession
 from codeinterpreterapi.schema.file import File
-
+from os import getenv
 
 async def main():
     # App title
@@ -97,7 +97,7 @@ async def main():
 
 if "session" not in st.session_state and settings.OPENAI_API_KEY is not None:
     async def get_session():
-        async with CodeInterpreterSession(model='gpt-3.5-turbo',
+        async with CodeInterpreterSession(model=getenv("CHAT_GPT_VERSION", 'gpt-3.5-turbo'),
                                           openai_api_key=settings.OPENAI_API_KEY) as session:
             st.session_state['session'] = session
     
